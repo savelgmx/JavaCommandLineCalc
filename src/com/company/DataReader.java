@@ -35,13 +35,13 @@ public class DataReader {
             String[] blocks = text.split("[+-/*]");
 
             // проверяем, входит ли строка blocks[0] в массив строк массива "roman"
-            boolean flag = false;
+            boolean isRomanDigit = false;
             for (int i = 0; i < roman.length; i++){
                 if (roman[i].equals(blocks[0]) || roman[i].equals(blocks[1])){
-                    flag = true;
+                    isRomanDigit = true;
                 }
-                //flag = true, значит будем иметь дело с римскими обозначениями
-                if(flag){
+                //isRomanDigit = true, значит будем иметь дело с римскими обозначениями
+                if(isRomanDigit){
                     number1 = romanToNumber(blocks[0]);
                     number2 = romanToNumber(blocks[1]);
                 } else {
