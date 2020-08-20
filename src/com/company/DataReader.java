@@ -3,12 +3,11 @@ package com.company;
 import java.util.Scanner;
 
 public class DataReader {
-   // public static char exitCharacter;
     private int number1;
     private int number2;
     private char operation;
     private boolean exitFlag;
-   public static char exitCharacter;
+    public static char exitCharacter;
     private char resultChar;
 
     public DataReader(char exitCharacter) {
@@ -22,21 +21,17 @@ public class DataReader {
         Integer[] arabic = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         String[] roman = {"X", "IX", "VIII", "VII", "VI", "V", "IV", "III", "II", "I"};
 
-        System.out.println("Введите выражение, состоящее из двух целых чисел от 0 до 10, знака операции и знака равно (напр. 2+2=): ");
+        System.out.println("Введите выражение, состоящее из двух целых чисел от 0 до 10, и знака операции(напр. 2+2): ");
         Scanner scanner = new Scanner(System.in);
-        //StringBuilder builder = new StringBuilder();
-        String text = scanner.nextLine();
+         String text = scanner.nextLine();
         if (text.indexOf(exitCharacter) != -1) {
             exitFlag = true;
             return;
         }
 
         try {
-            if ((text.charAt(text.length() - 1) != resultChar)) {
-                throw new RuntimeException();
-            }
 
-            text = text.substring(0, text.length() - 1);
+            text = text.substring(0, text.length() );//- 1
             String[] blocks = text.split("[+-/*]");
 
             // проверяем, входит ли строка blocks[0] в массив строк массива "roman"
