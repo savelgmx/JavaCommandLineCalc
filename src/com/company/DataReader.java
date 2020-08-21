@@ -8,11 +8,9 @@ public class DataReader {
     private char operation;
     private boolean exitFlag;
     public static char exitCharacter;
-    private char resultChar;
 
     public DataReader(char exitCharacter) {
         this.exitCharacter = exitCharacter;
-        this.resultChar = '=';
     }
 
 
