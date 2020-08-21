@@ -55,7 +55,10 @@ public class DataReader {
                 throw new IllegalArgumentException();
             }
         } catch (RuntimeException e) {
-            throw new IllegalArgumentException("Неверный формат данных");
+            if ((number1 > 10 || number1 < 0) || (number2 > 10 || number2 < 0)) {
+                throw new IllegalArgumentException("Числа должны быть в диапазоне от 1 до 10");
+            } else
+                throw new IllegalArgumentException("Неверный формат данных");
         }
     }
 
